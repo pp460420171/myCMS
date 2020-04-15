@@ -4,7 +4,10 @@ import qs from 'qs'
 export function request(config) {
   // 1创建axios实例
   const instance = axios.create({
-    baseURL: 'http://127.0.0.1:8081',
+    // 部署用baseURL
+    baseURL: 'http://172.20.103.125:8081',
+    // 测试用baseURL
+    // baseURL: 'http://127.0.0.1:8081',
     timeout: 5000,
     transformRequest:[function(data){
       data = qs.stringify(data);
